@@ -1,4 +1,4 @@
-#' @title ordkrige
+#' @title reskrige
 #'
 #' @description Regression kriging using a standardized variogram.
 #'
@@ -11,12 +11,11 @@
 #' SpatialPolygonsDataFrame with cross-validation data. For details, see
 #' mri function.
 #'
-#' @details This is the ordinary kriging function called by the mri function.
-#' It uses a standardized variogram and requires a raster template for which
-#' predictions are made. For details, see documentation of the mri function.
+#' @details This is the residual kriging function called by the mri function.
+#' For details, see documentation of the mri function.
 #'
 #' @export
-ordkrige<-function(x=NULL, y=NULL, z=NULL, field = NULL, edge = 0, filter = 1, resolution = NULL,
+reskrige<-function(x=NULL, y=NULL, z=NULL, field = NULL, edge = 0, filter = 1, resolution = NULL,
                    md = 'Sph', rg = NULL, ng = 0.1, check_data=T){
 
   #check input data
@@ -25,26 +24,27 @@ ordkrige<-function(x=NULL, y=NULL, z=NULL, field = NULL, edge = 0, filter = 1, r
     x<-a[[1]]; y<-a[[2]]; z<-a[[3]]; feedback<-a[[4]]
   }
 
+  ##compute residuals
+  z$res<-z$map-z$obs
+
   #compute range (argument rg) if not specified by user
   if(is.null(rg)) rg<-0.5*sqrt(area(y))
 
   ##parameterize standardized semivariogram model
-  sill<-var(z$obs, na.rm=T)
+  sill<-var(z$res, na.rm=T)
   mod<- vgm(psill = (1-ng)*sill, model= md, range = rg,nugget= ng*sill)
 
   #cross validate
   for (i in 1:nrow(z)){
-    obs_pred<-krige(obs~1, locations=z[-i,], newdata=z[i,], model = mod, debug.level=0)
-    z[i,'ordkrig_cv']<-obs_pred@data['var1.pred']
+    res_pred<-krige(res~1, locations=z[-i,], newdata=z[i,], model = mod, debug.level=0)
+    z[i,'reskrig_cv']<-z@data[i,'map']-res_pred@data['var1.pred']
   }
 
   #ordinary kriging to raster
   crs(x)<-crs(z) #to fix a bug
-  gsmod<-gstat(formula=obs~1, locations=z, model=mod)
-  ordkrig<-interpolate(x, gsmod,  fun=predict, debug.level=0)
-  ordkrig<-mask(ordkrig, x)
+  gsmod<-gstat(formula=res~1, locations=z, model=mod)
+  reskrig<-x-interpolate(x, gsmod,  fun=predict, debug.level=0)
 
   #return objects
-  return(list(ordkrig, z))
+  return(list(reskrig, z))
 }
-

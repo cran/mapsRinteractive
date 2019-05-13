@@ -2,23 +2,27 @@
 % Please edit documentation in R/r2.R
 \name{r2}
 \alias{r2}
-\title{Coefficient of Determination (r2)}
+\title{r2}
 \usage{
 r2(observed, predicted)
 }
 \arguments{
-\item{observed}{a numeric vector of observed values}
+\item{observed}{Numeric vector of observed values}
 
-\item{predicted}{a numeric vector of predicted values. The length shall be the same as for observed.}
+\item{predicted}{Numeric vector of predicted values. The length shall be
+the same as for observed.}
 }
 \value{
-Coefficient of determination (r2) for a linear regression model between predicted values and observed values.
+Coefficient of determination (r2) for a linear regression model
+between predicted values and observed values.
 }
 \description{
-Calculates the coefficient of determination (r2) for a linear regression model between predicted values and observed values.
+Calculates the coefficient of determination (r2) for a linear
+regression model between predicted values and observed values.
 }
 \examples{
 o<-1:5
 p<-c(2,2,4,3,5)
 r2(observed=o, predicted=p)
+
 }
