@@ -4,9 +4,19 @@
 \alias{reskrige}
 \title{reskrige}
 \usage{
-reskrige(x = NULL, y = NULL, z = NULL, field = NULL, edge = 0,
-  filter = 1, resolution = NULL, md = "Sph", rg = NULL, ng = 0.1,
-  check_data = T)
+reskrige(
+  x = NULL,
+  y = NULL,
+  z = NULL,
+  field = NULL,
+  edge = 0,
+  filter = 1,
+  resolution = NULL,
+  md = "Sph",
+  rg = NULL,
+  ng = 0.1,
+  check_data = T
+)
 }
 \arguments{
 \item{x}{Raster dataset. Required. Must be have a defined coordinate system.

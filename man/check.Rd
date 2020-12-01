@@ -4,8 +4,15 @@
 \alias{check}
 \title{check}
 \usage{
-check(x = NULL, y = NULL, z = NULL, field = NULL, edge = 0,
-  filter = 1, resolution = NULL)
+check(
+  x = NULL,
+  y = NULL,
+  z = NULL,
+  field = NULL,
+  edge = 0,
+  filter = 1,
+  resolution = NULL
+)
 }
 \arguments{
 \item{x}{Raster dataset. Required. Must be have a defined coordinate system.

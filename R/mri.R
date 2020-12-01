@@ -3,7 +3,7 @@
 #' @description Local adaptation and evaluation of digital soil maps in raster
 #' format by use of point location soil property data.
 
-#' @author Kristin Piikki & Mats Söderström ,  \email{kristin.piikki@@slu.se}
+#' @author Kristin Piikki Mats Söderström & John Mutua,  \email{kristin.piikki@@slu.se}
 
 #' @param x Raster dataset. Required. Must be have a defined coordinate system.
 #' If the coordinate system is not cartesian, the data will be projected onto

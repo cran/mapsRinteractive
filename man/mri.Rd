@@ -4,8 +4,18 @@
 \alias{mri}
 \title{mri}
 \usage{
-mri(x = NULL, y = NULL, z = NULL, field = NULL, edge = 0,
-  filter = 1, resolution = NULL, md = "Sph", rg = NULL, ng = 0.1)
+mri(
+  x = NULL,
+  y = NULL,
+  z = NULL,
+  field = NULL,
+  edge = 0,
+  filter = 1,
+  resolution = NULL,
+  md = "Sph",
+  rg = NULL,
+  ng = 0.1
+)
 }
 \arguments{
 \item{x}{Raster dataset. Required. Must be have a defined coordinate system.
@@ -164,5 +174,5 @@ Nash, J.E.; Sutcliffe, J.V. River flow forecasting through conceptual models
 part I—A discussion of principles. J. Hydrol. 1970, 103, 282–290.
 }
 \author{
-Kristin Piikki & Mats Söderström ,  \email{kristin.piikki@slu.se}
+Kristin Piikki Mats Söderström & John Mutua,  \email{kristin.piikki@slu.se}
 }

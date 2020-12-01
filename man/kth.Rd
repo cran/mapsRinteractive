@@ -4,8 +4,14 @@
 \alias{kth}
 \title{kth}
 \usage{
-kth(x = NULL, k = 2, highest = TRUE, index = FALSE,
-  unique = FALSE, multiple = FALSE)
+kth(
+  x = NULL,
+  k = 2,
+  highest = TRUE,
+  index = FALSE,
+  unique = FALSE,
+  multiple = FALSE
+)
 }
 \arguments{
 \item{x}{Numeric vector.}
