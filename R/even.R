@@ -1,6 +1,6 @@
 #' @title even
 #'
-#' @description Checks if an integer is even.
+#' @description Checks whether an integer is even.
 #'
 #' @param x Integer.
 #'

@@ -15,28 +15,27 @@ check(
 )
 }
 \arguments{
-\item{x}{Raster dataset. Required. Must be have a defined coordinate system.
-If the coordinate system is not cartesian, the data will be projected onto
-the Web Mercator (epsg: 3857) coordinate system before any analyses/tests.}
+\item{x}{SpatRaster. Required. Must be have a defined Cartesian coordinate 
+system. Data must be continuous. If more than one layer, the first layer 
+will be used.}
 
-\item{y}{SpatialPolygonsDataFrame. Optional. Delineates the area within
-which the raster layer shall be locally adapted and evaluted. Must be projected. If not
-projected onto the same coordinate system as x, it will be reprojected to the
-coordinate system of x. If not provided, the analyses willbe performed within
-the intersect of the raster and the sampled area."}
+\item{y}{SpatVector of polygons. Optional. Delineates the area within
+which the raster layer shall be locally adapted and evaluated. If not provided,
+the analyses will be performed within the intersect of the raster and the
+sampled area. Must be have a defined Cartesian coordinate system (same as x).}
 
-\item{z}{SpatialPointsDataFrame. Required. Must have at least one column
-with numerical data and these data must be of the same entity unit as the raster
-(specify this column by argument: field). Must be projected. If not
-projected to the same coordinate system as x, it will be reprojected to the
-coordinate system of x.}
+\item{z}{SpatVector of points Required. Must have at least one column
+with numerical data and these data must be of the same entity and unit as x
+(specify this column by argument: field). Must be have a defined Cartesian 
+coordinate system (same as x).}
 
 \item{field}{Character value. Required. Name of the column in
-y with the data that shall be used to locally adapt and evaluate the raster}
+y with the data that shall be used to locally adapt and evaluate the raster.}
 
-\item{edge}{Numeric value. Optional. Specifies the width (m) of a
-buffer zone inside the edge of the polygon that is excluded from the analyses.
-Allowed values are within the closed range of 0-10000.}
+\item{edge}{Numeric value. Optional. Specifies the width (unit of the 
+coordinate reference system) of a buffer zone inside the edge of the polygon 
+that is excluded from the analyses. Allowed values are within the closed range 
+of 0-10000.}
 
 \item{filter}{Positive integer. Optional. No of cells in the side of a square
 window for mean filtering of x. Filtering is done before any resampling
@@ -48,10 +47,10 @@ values are within the closed range of 0.1-10000. In addition, a resolution that
 means more than 1E+8 raster cells is not allowed.}
 }
 \value{
-A list with checked and corrected datasets together with a vector of logged feedback.
+A list with checked and corrected data sets together with a vector of logged feedback.
 }
 \description{
-Checks attributes, geometries and projections of spatial datasets.
+Checks attributes, geometries and projections of spatial data sets.
 }
 \details{
 Intended for checking data in functions of mapsRinteractive.

@@ -13,7 +13,7 @@ even(x)
 Logical value (TRUE or FALSE). TRUE means that the value is even.
 }
 \description{
-Checks if an integer is even.
+Checks whether an integer is even.
 }
 \examples{
 even(3)

@@ -14,7 +14,7 @@
 #' @param index Logical. TRUE means that the index/indices of the kth highest/lowest
 #' value(s) is/are returned. FALSE means that the kth highest/lowest value
 #' itself is returned. If ties exist and argument multiple = TRUE, the returned value is a vector, else
-#' it is a value. Default=FALSE.
+#' it is a value. Default = FALSE.
 #'
 #' @param unique Logical. TRUE means that duplicates are removed before the
 #' identification of the kth highest/lowest value(s). Default=FALSE

@@ -1,6 +1,6 @@
 #' @title even
 #'
-#' @description Checks if an integer is odd.
+#' @description Checks whether an integer is odd.
 #'
 #' @param x Integer.
 #'

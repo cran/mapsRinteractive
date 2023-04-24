@@ -13,7 +13,7 @@ odd(x)
 Logical value (TRUE or FALSE). TRUE means that the value is odd.
 }
 \description{
-Checks if an integer is odd.
+Checks whether an integer is odd.
 }
 \examples{
 odd(3)

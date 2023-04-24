@@ -4,10 +4,10 @@
 #'
 #' @param df Data.frame. Required. A data.frame with observed and predicted data.
 #'
-#' @param observed Charachter value. Required. The  name of the column in df
+#' @param observed Character value. Required. The  name of the column in df
 #' with predicted data.The data must be of class numeric.
 #'
-#' @param predicted Charachter value or vector. Required. The  names of the
+#' @param predicted Character value or vector. Required. The  names of the
 #' column(s) in df with predicted data. The data  must be of class numeric.
 #'
 #' @return A data.frame with evaluation statistics. For details, see mri function.
@@ -37,5 +37,5 @@ evaluate<-function(df, observed, predicted){
   }
 
   #return objects
-  return(evaluattion=evaluation)
+  return(evaluation=evaluation)
 }

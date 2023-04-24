@@ -9,10 +9,10 @@ evaluate(df, observed, predicted)
 \arguments{
 \item{df}{Data.frame. Required. A data.frame with observed and predicted data.}
 
-\item{observed}{Charachter value. Required. The  name of the column in df
+\item{observed}{Character value. Required. The  name of the column in df
 with predicted data.The data must be of class numeric.}
 
-\item{predicted}{Charachter value or vector. Required. The  names of the
+\item{predicted}{Character value or vector. Required. The  names of the
 column(s) in df with predicted data. The data  must be of class numeric.}
 }
 \value{
